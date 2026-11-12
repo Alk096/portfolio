@@ -45,7 +45,7 @@ export function About({ theme }: { theme: Theme }) {
       <div className="page-container grid items-center gap-y-8 md:grid-cols-12 md:gap-x-6">
         <div className="md:col-span-5">
           <div className="overflow-hidden pb-[0.1em]">
-            <h2 data-entrance="title" className="text-display-lg">
+            <h2 data-entrance="title" className="text-h1">
               {about.title}
             </h2>
           </div>

@@ -69,7 +69,7 @@ export function Skills() {
           />
         </div>
 
-        <ul aria-label="Technologies" className="mt-8 flex flex-wrap gap-1.5 md:mt-10">
+        <ul aria-label="Technologies" className="mt-4 flex flex-wrap gap-1.5 md:mt-5">
           {technologies.map((tech) => (
             <li key={tech} data-entrance="tech">
               <Tag>{tech}</Tag>

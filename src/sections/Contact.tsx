@@ -59,7 +59,7 @@ export function Contact() {
   }
 
   return (
-    <section ref={root} id="contact" className="bg-bg-100 py-16 md:py-24">
+    <section ref={root} id="contact" className="bg-bg-000 py-16 md:py-24">
       <div className="page-container grid gap-y-8 md:grid-cols-12 md:gap-x-6">
         <div className="overflow-hidden pb-[0.1em] md:col-span-6">
           <h2 data-entrance="title" className="max-w-[20ch] text-h1 text-balance">

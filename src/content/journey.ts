@@ -29,8 +29,8 @@ export const journey: JourneyStep[] = [
   },
   {
     period: '2026',
-    title: 'Développeur Full-Stack & certification eJPT',
-    text: 'Expérience professionnelle dans le développement logiciel, obtention de la certification eJPT et approfondissement de mes compétences en tests d’intrusion. Actuellement en dernière année de Bachelor Informatique à l’UIN, avec un intérêt particulier pour la sécurité des applications et le pentest.',
+    title: 'Développeur Full-Stack & préparation eJPT',
+    text: 'Expérience professionnelle dans le développement logiciel, préparation de la certification eJPT et approfondissement de mes compétences en tests d’intrusion. Actuellement en dernière année de Bachelor Informatique à l’UIN, avec un intérêt particulier pour la sécurité des applications et le pentest.',
   },
   {
     period: 'Aujourd’hui',

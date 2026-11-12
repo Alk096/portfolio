@@ -11,7 +11,7 @@ export const identity = {
   /** Monogramme affiché dans la navigation, suivi d'un point ambre. */
   monogram: 'MA',
   tagline:
-    'Je conçois des applications web et des API, puis je cherche leurs failles. Développeur orienté backend, certifié eJPT en sécurité offensive.',
+    'Je conçois des applications web et des API, puis je cherche leurs failles. Développeur orienté backend, en préparation de la certification eJPT en sécurité offensive.',
   /** false masque le statut sous les boutons du hero. */
   available: true,
   availableLabel: 'Ouvert aux opportunités professionnelles',
@@ -39,6 +39,7 @@ export const navLinks = [
   { label: 'Projets', href: '#projets' },
   { label: 'Compétences', href: '#skills' },
   { label: 'Parcours', href: '#parcours' },
+  { label: 'Certifs & CTF', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ]
 

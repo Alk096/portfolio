@@ -6,6 +6,7 @@ import { Footer } from './sections/Footer'
 import { Hero } from './sections/Hero'
 import { Journey } from './sections/Journey'
 import { Projects } from './sections/Projects'
+import { Proofs } from './sections/Proofs'
 import { Skills } from './sections/Skills'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Projects />
         <Skills />
         <Journey />
+        <Proofs />
         <Contact />
       </main>
       <Footer />
