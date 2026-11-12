@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Développeur full-stack orienté backend à Niamey, certifié eJPT. Applications web, API Django et React, tests d’intrusion." />
+    <!-- TODO : remplacer /og.png par l’URL absolue du site une fois le domaine connu ; les réseaux sociaux ignorent les chemins relatifs. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mahamadou Alkerou · Développeur full-stack et pentest" />
+    <meta property="og:description" content="Développeur full-stack orienté backend à Niamey, certifié eJPT. Applications web, API Django et React, tests d’intrusion." />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#07080c" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Mahamadou Alkerou · Développeur full-stack et pentest</title>
+    <script>
+      // Thème mémorisé appliqué avant le premier rendu : pas de flash du mauvais thème.
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

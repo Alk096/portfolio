@@ -1,0 +1,252 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* ------------------------------------------------------------------
+   Tokens du design system. Le thème Nuit est le défaut ; le thème Jour
+   redéfinit les mêmes variables sous [data-theme='light'].
+   ------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+
+  --bg-000: #07080c;
+  --bg-100: #0d0f16;
+  --bg-200: #141824;
+  --bg-300: #1d2232;
+  --line: #22283a;
+  --line-strong: #5b6482;
+  --ink: #eef0f6;
+  --ink-muted: #9aa1b5;
+  --ink-faint: #7d859b;
+
+  --amber: #ffb547;
+  --on-amber: #1a1204;
+  --amber-text: #ffb547;
+  --violet: #8f84ff;
+  --on-violet: #0c0a24;
+  --violet-text: #8f84ff;
+  --mint: #3ef2b0;
+  --mint-text: #3ef2b0;
+  --rose: #ff6b7a;
+  --rose-text: #ff6b7a;
+
+  --halo-amber: rgba(255, 181, 71, 0.32);
+  --halo-violet: rgba(143, 132, 255, 0.32);
+  --halo-mint: rgba(62, 242, 176, 0.28);
+
+  --glow-amber:
+    0 0 0 1px rgba(255, 181, 71, 0.55), 0 0 18px rgba(255, 181, 71, 0.35),
+    0 0 48px rgba(255, 181, 71, 0.18);
+  --glow-violet:
+    0 0 0 1px rgba(143, 132, 255, 0.6), 0 0 18px rgba(143, 132, 255, 0.35),
+    0 0 48px rgba(143, 132, 255, 0.18);
+  --lift: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+  --gradient-neon: linear-gradient(120deg, #ffb547 0%, #ff8a5b 45%, #8f84ff 100%);
+  --gradient-neon-vertical: linear-gradient(180deg, #ffb547 0%, #ff8a5b 45%, #8f84ff 100%);
+
+  /* Empilement : contenu au-dessus d'un décor, puis navigation, puis lien d'évitement. */
+  --z-raised: 10;
+  --z-nav: 50;
+  --z-skip: 60;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-000: #f7f6f2;
+  --bg-100: #efede6;
+  --bg-200: #fffdf8;
+  --bg-300: #e7e4db;
+  --line: #e2ded3;
+  --line-strong: #7c8190;
+  --ink: #12141c;
+  --ink-muted: #4d5366;
+  --ink-faint: #63697c;
+
+  --amber-text: #955600;
+  --violet-text: #5a4ee0;
+  --mint-text: #03754f;
+  --rose-text: #c22f42;
+
+  --halo-amber: rgba(194, 116, 0, 0.18);
+  --halo-violet: rgba(90, 78, 224, 0.16);
+  --halo-mint: rgba(4, 128, 90, 0.14);
+
+  --glow-amber: 0 0 0 1px rgba(163, 95, 0, 0.45), 0 6px 20px rgba(194, 116, 0, 0.2);
+  --glow-violet: 0 0 0 1px rgba(90, 78, 224, 0.45), 0 6px 20px rgba(90, 78, 224, 0.18);
+  --lift: 0 14px 32px rgba(18, 20, 28, 0.1);
+}
+
+/* Expose les tokens à Tailwind : bg-bg-100, text-ink-muted, rounded-pill… */
+@theme inline {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-bg-000: var(--bg-000);
+  --color-bg-100: var(--bg-100);
+  --color-bg-200: var(--bg-200);
+  --color-bg-300: var(--bg-300);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-amber: var(--amber);
+  --color-on-amber: var(--on-amber);
+  --color-amber-text: var(--amber-text);
+  --color-violet: var(--violet);
+  --color-on-violet: var(--on-violet);
+  --color-violet-text: var(--violet-text);
+  --color-mint: var(--mint);
+  --color-mint-text: var(--mint-text);
+  --color-rose: var(--rose);
+  --color-rose-text: var(--rose-text);
+  --color-halo-amber: var(--halo-amber);
+  --color-halo-violet: var(--halo-violet);
+  --color-halo-mint: var(--halo-mint);
+
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-sans: 'Geist Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-glow-amber: var(--glow-amber);
+  --shadow-glow-violet: var(--glow-violet);
+  --shadow-lift: var(--lift);
+
+  --container-page: 1200px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg-000);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--amber-text);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--amber);
+    color: var(--on-amber);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Échelle typographique (les display se réduisent sur mobile).
+   ------------------------------------------------------------------ */
+@utility text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7.4vw, 88px);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.4vw, 64px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.05;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 32px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+@utility text-h4 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+@utility text-body {
+  font-size: 16px;
+  line-height: 26px;
+}
+@utility text-body-sm {
+  font-size: 14px;
+  line-height: 22px;
+}
+@utility text-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* Étiquettes de technos et badges : plus petites que `label`, sans majuscules forcées. */
+@utility text-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+}
+@utility text-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* Conteneur de page : 1200px max, gouttière 16px mobile / 24px desktop. */
+@utility page-container {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: 16px;
+  @media (min-width: 768px) {
+    padding-inline: 24px;
+  }
+}
